@@ -1,0 +1,17 @@
+def optimalPoint(magic,dist): 
+	n=len(magic)   
+   	magLevel,totalMag=0,0  
+   	start,end=0,0  
+   	for i in range(n):  
+      		totalMag+=dist[i]     
+   		magLevel+=magic[i]-dist[i]  
+      		if magLevel<0:       
+        		magLevel=0       
+        		start=i+1      
+        		end=i+1   
+      		else:      
+         		end=i   
+	if end < start or magLevel < totalMag: 
+       		return -1   
+ 	else:     
+   		return start
